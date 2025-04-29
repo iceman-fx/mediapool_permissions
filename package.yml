@@ -1,0 +1,7 @@
+package: mediapool_permissions
+version: '0.1'
+author: © Falko Müller
+supportpage: https://github.com/iceman-fx/mediapool_permissions
+
+requires:
+    redaxo: '^5.18.0'
