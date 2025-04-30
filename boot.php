@@ -2,7 +2,7 @@
 /*
 	Redaxo-Addon: Medienpool-Kategorien beschränken
 	Boot (weitere Konfigurationen & Einbindung)
-	v0.1
+	v0.1.1
 	by Falko Müller @ 2025
 */
 
@@ -43,7 +43,7 @@ if (rex::isBackend() && !mediapool_permissions::hasAllMediaPerm()):
 						$prop->setAccessible(true);
 					$catIds = $prop->getValue($perm);
 					
-					$catId = (isset($catIds[0])) ? $catIds[0] : $sCatId;
+					$catId = (is_array($catIds) && isset($catIds[0])) ? intval($catIds[0]) : $sCatId;
 				
 					rex_set_session('media[rex_file_category]', $catId);
 				endif;
